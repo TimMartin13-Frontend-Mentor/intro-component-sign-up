@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles';
 import './App.css';
 import Attribution from './components/Attribution';
+import Main from './components/Main';
 
 const theme = {
   red: "hsl(0, 100%, 74%)",
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={ theme }>
         <GlobalStyle />
+        <Main />
         <Attribution />
       </ThemeProvider>
     </div>
@@ -24,11 +26,6 @@ function App() {
 }
 
 export default App;
-
-// Learn to code by watching others
-
-//   See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-//   but understanding how developers think is invaluable. 
 
 //   Try it free 7 days then $20/mo. thereafter
 

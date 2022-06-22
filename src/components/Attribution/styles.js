@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Text = styled.text`
+export const Text = styled.h6`
   font-size: 11px; 
   text-align: center; 
   color: ${props => props.theme.white};
