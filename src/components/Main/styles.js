@@ -37,6 +37,7 @@ export const Heading = styled.h1`
   line-height: 1.6rem;
   font-weight: 400;
   box-shadow: 0px 8px 1px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
 `
 export const Bold = styled.span`
   font-weight: 600;

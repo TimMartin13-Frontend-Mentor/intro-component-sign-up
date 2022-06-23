@@ -1,5 +1,6 @@
 import React from "react";
 import { MainContainer, SectionContainer, Heading, Copy, FormContainer, Button, Bold } from './styles';
+import InputForm from './../InputForm';
 
 const Main = () => {
   return (
@@ -10,7 +11,7 @@ const Main = () => {
       </SectionContainer> 
       <FormContainer>
         <Button><Bold>Try it free 7 days</Bold> then $20/mo. thereafter</Button>
-        {/* <Form /> */}
+        <InputForm />
       </FormContainer>
     </MainContainer>
   )
