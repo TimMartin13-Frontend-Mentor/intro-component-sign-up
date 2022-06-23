@@ -27,8 +27,6 @@ function App() {
 
 export default App;
 
-//   Try it free 7 days then $20/mo. thereafter
-
 //   First Name 
 //   Last Name 
 //   Email Address
