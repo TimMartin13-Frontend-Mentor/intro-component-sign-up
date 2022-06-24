@@ -25,9 +25,9 @@ export const Input = styled.input`
   border-radius: 0.4rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
-  
-  @media screen and (min-width: 768px) {
-    margin-bottom: 2.5rem;
+
+  &:invalid {
+    border: 2px solid ${props => props.theme.red};
   }
 `
   
@@ -44,6 +44,10 @@ export const Button = styled.button`
   font-weight: 500;
   letter-spacing: 0.05rem;
   box-shadow: 0px 4px 1px rgba(48, 186, 127, 1);
+  
+  &:hover {
+    filter: brightness(1.2);
+  }
 `
   
 export const Disclaimer = styled.p`
