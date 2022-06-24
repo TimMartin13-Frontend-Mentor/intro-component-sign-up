@@ -19,7 +19,7 @@ body {
 @media screen and (min-width: 768px) {
   body {
     background: url(${desktopBg}) top left;
-    background-color: ${props => props.theme.blue};
+    background-color: ${props => props.theme.red};
   }
 }
 `

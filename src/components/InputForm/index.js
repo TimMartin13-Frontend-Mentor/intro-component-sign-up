@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Form, Input, Button } from './styles'; 
+import { Card, Form, Input, Button, Terms, Disclaimer } from './styles'; 
 
 const InputForm = () => {
   return (
@@ -10,6 +10,9 @@ const InputForm = () => {
         <Input type="text" name="email" placeholder="Email Address"/>
         <Input type="text" name="password" placeholder="Password"/>
         <Button>Claim your free trial</Button>
+        <Disclaimer>
+          By clicking the button, you are agreeing to our<Terms> Terms and Services</Terms>
+        </Disclaimer>
       </Form>
     </Card>
   )
