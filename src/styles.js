@@ -20,6 +20,8 @@ body {
   body {
     background: url(${desktopBg}) top left;
     background-color: ${props => props.theme.red};
+    max-width: 1150px;
+    margin: 0 auto;
   }
 }
 `

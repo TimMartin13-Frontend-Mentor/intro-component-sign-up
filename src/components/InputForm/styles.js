@@ -5,6 +5,10 @@ export const Card = styled.div`
   border-radius: 0.8rem;
   padding: 1.5rem 1.5rem 0.8rem;
   box-shadow: 0px 8px 1px rgba(0, 0, 0, .2);
+
+  @media screen and (min-width: 768px) {
+    padding: 2.6rem 2.6rem 1.8rem;
+  }
 `
   
 export const Form = styled.form`
@@ -13,7 +17,7 @@ export const Form = styled.form`
   
 export const Input = styled.input`
   width: 100%;
-  padding: 1rem;
+  padding: 1.1rem;
   font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -21,6 +25,10 @@ export const Input = styled.input`
   border-radius: 0.4rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  
+  @media screen and (min-width: 768px) {
+    margin-bottom: 2.5rem;
+  }
 `
   
 export const Button = styled.button`
