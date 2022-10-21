@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Frontend Mentor - Intro component with sign up form solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Receive an error message when the `form` is submitted if:
+  - Any `input` field is empty. The message for this error should say _"[Field Name] cannot be empty"_
+  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+Desktop Layout
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Desktop](./public/images/screenshots/desktop_layout.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Mobile Layout
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Mobile](./public/images/screenshots/mobile_layout.png)
 
-### `npm run eject`
+Error states
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Error](./public/images/screenshots/error_states.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Button hover state
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Button Hover](./public/images/screenshots/button_highlight.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Links
 
-## Learn More
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/intro-component-sign-up-using-reactstyled-components-FI0bSnBx7I)
+- Live Site URL: [Github Pages](https://timmartin13-frontend-mentor.github.io/intro-component-sign-up/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## My process
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Built with
 
-### Code Splitting
+- Semantic HTML5 markup
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### What I learned
 
-### Analyzing the Bundle Size
+I learned a lot about styling inputs and handling form validation along with React useState().
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The styled Input components
 
-### Making a Progressive Web App
+```css
+export const Input = styled.input`
+  width: 100%;
+  padding: 1.05rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: ${(props) => (props.error ? '3px' : '1px')} solid
+    ${(props) => (props.error ? props.theme.red : props.theme.lightGrey)};
+  border-radius: 0.4rem;
+  margin-bottom: 1.1rem;
+  box-sizing: border-box;
+  color: ${(props) => (props.error ? props.theme.red : props.theme.darkBlue)};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  &::placeholder {
+    color: ${(props) => (props.error ? props.theme.red : props.theme.darkBlue)};
+  }
+`;
+```
 
-### Advanced Configuration
+State variable for first name field
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```js
+const [firstName, setFirstName] = useState({
+  name: '',
+  error: false,
+  errorMessage: 'First Name cannot be empty',
+});
+```
 
-### Deployment
+Checking two different validations type for the email address
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```js
+if (!email.address) {
+  setEmail({
+    ...email,
+    error: true,
+    errorMessage: 'Email cannot be empty',
+  });
+} else if (validEmail(email.address)) {
+  setEmail({
+    ...email,
+    error: true,
+    errorMessage: 'Looks like this is not an email',
+  });
+}
+```
 
-### `npm run build` fails to minify
+The Input component in React
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+{
+  /* First Name */
+}
+<InputWrapper>
+  <Input
+    type='text'
+    name='firstName'
+    placeholder={firstName.error ? '' : 'First Name'}
+    value={firstName.name}
+    onChange={(e) =>
+      setFirstName({ ...firstName, name: e.target.value, error: false })
+    }
+    error={firstName.error}
+  />
+  {/* Exclamation point on error */}
+  {firstName.error ? <AlertIcon /> : ''}
+</InputWrapper>;
+{
+  /* Error text */
+}
+{
+  firstName.error ? <Alert message={firstName.errorMessage} /> : '';
+}
+```
+
+### Continued development
+
+I am going to continue to focus on React because I want to learn it very well before moving onto something else. I am going to try to expand my knowledge of JavaScript so that I can make applications more interactive and fun.
+
+### Useful resources
+
+- [Hosting React on Github pages](https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/) - This helped me to get my React app up on github pages
+- [Styled Components](https://styled-components.com/) - This helped me understand more about how to use styled components
+
+## Author
+
+- Website - [My portfolio](https://timmartin13.github.io/react-portfolio/)
+- Frontend Mentor - [@TimMartin13](https://www.frontendmentor.io/profile/TimMartin13)
